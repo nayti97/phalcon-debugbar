@@ -7,7 +7,7 @@
 
 namespace Snowair\Debugbar\Phalcon\Db;
 
-use Phalcon\Db\Adapter;
+use Phalcon\Db\Adapter\AbstractAdapter;
 use Phalcon\Version;
 use Phalcon\Db\Column;
 use \Phalcon\Db\Profiler as PhalconProfiler;
@@ -67,7 +67,7 @@ class Profiler extends  PhalconProfiler {
 	 *
 	 * @return Profiler
 	 */
-	public function startProfile($sqlStatement, $sqlVariables = null, $sqlBindTypes = null)
+    public function startProfile($sqlStatement, $sqlVariables = null, $sqlBindTypes = null): \Phalcon\Db\Profiler
 	{
 		$this->handleFailed();
 		$activeProfile = new Item();
@@ -169,7 +169,7 @@ class Profiler extends  PhalconProfiler {
      *
      * @return PhalconProfiler
      */
-    public function stopProfile()
+    public function stopProfile(): \Phalcon\Db\Profiler
     {
         $finalTime = microtime(true);
         $activeProfile = $this->_activeProfile;

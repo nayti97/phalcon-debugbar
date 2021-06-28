@@ -181,9 +181,9 @@ class ServiceProvider extends Injectable {
                 return;
             }
 
-            $router->handle();
-            $deny_routes  = (array)$config->get('deny_routes');
-            $allow_routes = (array)$config->get('allow_routes');
+            $router->handle($_SERVER["REQUEST_URI"]);
+            $deny_routes = $config->get('deny_routes')->toArray();
+            $allow_routes = $config->get('allow_routes')->toArray();
 
             $current = $router->getMatchedRoute();
 

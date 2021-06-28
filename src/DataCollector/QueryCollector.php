@@ -28,10 +28,12 @@ class QueryCollector extends PDOCollector{
 
 	public function collect()
 	{
-		/** @var Item[] $succeed */
-		$succeed = (array)$this->profiler->getProfiles();
-		/** @var Item[] $failed */
-		$failed = (array)$this->profiler->getFailedProfiles();
+        $tab_profiles = (array)$this->profiler;
+        /** @var Item[] $succeed */
+        $succeed = $tab_profiles["_allProfiles"];
+
+        /* @var Item[] $failed */
+        $failed = (array)$this->profiler->getFailedProfiles();
 		$data = array(
 			'nb_statements'        => count($succeed) +count($failed),
 			'nb_failed_statements' => count($failed),

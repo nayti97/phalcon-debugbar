@@ -6,8 +6,7 @@
  */
 namespace Snowair\Debugbar\Phalcon\Cache;
 
-use Phalcon\Cache\Exception;
-use Phalcon\Cache\Frontend\Base64;
+use Phalcon\Cache\Exception\Exception;
 
 class Proxy {
 
@@ -24,7 +23,7 @@ class Proxy {
 			$value = call_user_func_array(array($this->_backend,$name),$parameters);
 			$parameters[] = $value;
 			$frontend = $this->_backend->getFrontend();
-			if ( is_object($frontend) && $frontend instanceof Base64 ) {
+            if ( is_object($frontend)) {
 				if ( $name=='save' ) {
 					$parameters[1] = '[BINARY DATA]';
 				}

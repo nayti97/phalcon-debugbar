@@ -4,7 +4,7 @@
     "type": "library",
     "keywords": ["phalcon", "debugbar", "profiler", "debug", "webprofiler"],
     "require": {
-        "php": ">=7.1.0",
+        "php": ">=7.4.0",
         "maximebf/debugbar": "^1",
         "filp/whoops": "^2"
     },
