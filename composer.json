@@ -4,8 +4,8 @@
     "type": "library",
     "keywords": ["phalcon", "debugbar", "profiler", "debug", "webprofiler"],
     "require": {
-        "php": ">=7.4.0",
-        "maximebf/debugbar": "^1",
+        "php": "7.3.*",
+        "maximebf/debugbar": "^1.16",
         "filp/whoops": "^2"
     },
     "autoload": {
